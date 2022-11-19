@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "91c006a3-887e-45c3-9350-95e4d03fcede",
+		"name": "Mod005 SA Activity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13561022"
+	},
+	"item": [
+		{
+			"name": "Api Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees?page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees Oldest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees?oldest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "oldest",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees Privileges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees?user=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees Badges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees?bages=black",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "bages",
+							"value": "black"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "name",
+						"value": "danny",
+						"type": "text"
+					},
+					{
+						"key": "age",
+						"value": "34",
+						"type": "text"
+					},
+					{
+						"key": "phoneHome",
+						"value": "21312312",
+						"type": "text"
+					},
+					{
+						"key": "phoneWork",
+						"value": "2345678",
+						"type": "text"
+					},
+					{
+						"key": "phoneExt",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "privileges",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "badges",
+						"value": "black",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Danny\",\r\n    \"age\": 38,\r\n    \"phone\": {\r\n            \"personal\": \"506-2244-1462\",\r\n            \"work\": \"506-8316-9016\",\r\n            \"ext\": \"2244\"\r\n        },\r\n    \"privileges\": \"user\",\r\n    \"favorites\": {\r\n            \"artist\": \"P!nk\",\r\n            \"food\": \"Pasta\"\r\n        },\r\n    \"finished\": [\r\n        34,\r\n        7\r\n    ],\r\n    \"badges\": [\r\n        \"blue\"\r\n    ],\r\n    \"points\": [\r\n        {\r\n            \"points\": 71,\r\n            \"bonus\": 20\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Employees :Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees/Willy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						"Willy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
