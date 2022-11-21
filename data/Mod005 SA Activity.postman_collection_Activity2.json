@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "95cd15c4-eea8-4b9b-9d82-e7f26ec2b9e1",
+		"name": "Mod005 SA Activity 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13561022"
+	},
+	"item": [
+		{
+			"name": "List post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MTM2OTQ0ZmNkNzliYTI0NzA3ZTJmODIiLCJleHAiOjE2NjY2NDEzOTksImlhdCI6MTY2NjYzNzc5OX0.oNbAhNd1PB7f6SCpAy3wzJrf4-A1zdI882b2S0O-Ss0",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MTM2OTQ0ZmNkNzliYTI0NzA3ZTJmODIiLCJleHAiOjE2NjYxNzUwOTksImlhdCI6MTY2NjE3MTQ5OX0.TIKqM_rh1U_55KyLdcB1iHb7MZHfvoCIhSd7a6nb92M",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hello\",\r\n    \"text\": \"COsas\",\r\n    \"author\": \"dan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/posts/637b1b8ac9d75b05b4abd4a9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"637b1b8ac9d75b05b4abd4a9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hi\",\r\n    \"text\": \"Cosi\",\r\n    \"author\": \"dan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/637b1d5e100a31249c7d568a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"637b1d5e100a31249c7d568a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Posr",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
