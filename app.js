@@ -31,7 +31,7 @@ app.use((error, req, res, next) => {
     error = createError(400, error);
   } else if (error instanceof mongoose.Error.CastError && error.message.includes('_id')) {
     error = createError(404, 'Resource not found');
-  } else if (error.message.includes('E11000')) {
+  } else if (error?.message.includes('E11000')) {
     error = createError(409, 'Duplicated');
   } else if (!error.status) {
     error = createError(500, error);

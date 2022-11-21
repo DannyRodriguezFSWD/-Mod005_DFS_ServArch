@@ -8,8 +8,7 @@ module.exports.list = (req, res, next) => {
   .then((post) => {
     res.json(post);
   })
-  .catch(next);
-  
+  .catch(next);  
 }
 
 module.exports.create = (req, res, next) => {
