@@ -3,7 +3,10 @@ const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 
 module.exports.create = (req, res, next) => {
-  User.create(req.body)
+  User.create({
+    ...req.body,
+    active: false
+  })
     .then(user => res.status(201).json(user))
     .catch(next)
 }
@@ -16,17 +19,25 @@ module.exports.list = (req, res, next) => {
     .catch(next);  
   }
 
-// module.exports.get = (req, res, next) => {
-//   User.findById(req.params.id)
-//     .then(user => res.status(200).json(user))
-//     .catch(next)
-// }
+module.exports.validate = (req, res, next) => {
+    User.findByIdAndUpdate(
+        req.params.id,
+        { active: true },
+        {
+            new: true,
+            runValidators: true,
+        }
+    )
+    .then((user) => {
+        if (user) {
+            res.json(user);
+        } else {
+            next(creeateError(404, "user not found"));
+        }
+    })
+    .catch(next)
+}
 
-// module.exports.delete = (req, res, next) => {
-//   User.findByIdAndDelete(req.params.id)
-//     .then(user => res.status(204).end())
-//     .catch(next)
-// }
 
 module.exports.login = (req, res, next) => {
     const { email, password } = req.body;

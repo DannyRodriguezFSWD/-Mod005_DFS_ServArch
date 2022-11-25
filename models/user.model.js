@@ -27,7 +27,7 @@ const userSchema = new Schema({
       maxlength: 200
   },
   active: {
-      type: String,
+      type: Boolean,
       default: false
   },
   password: {

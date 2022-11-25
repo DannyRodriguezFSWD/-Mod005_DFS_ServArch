@@ -18,6 +18,7 @@ router.patch('/posts/:id', secure.auth, posts.update)
 router.delete('/posts/:id', secure.auth, posts.delete)
 
 router.post('/users', users.create)
+router.get('/users/:id/validate', users.validate)
 router.get('/users', users.list)
 //router.get('/users/:id', users.get)
 // router.patch('/users/:id', users.update)
