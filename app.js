@@ -16,6 +16,16 @@ app.use(express.json());
 
 
 /** Routes */
+app.get(('/'), (req, res, next) => {
+  const ndx = {
+    'message': 'Hello',
+    'Employees': '/api/employees',
+    'Post': '/api/posts',
+    'Users': '/api/users'  
+  }
+  return res.json(ndx)
+})
+
 const routes = require('./config/routes.config');
 app.use('/api', routes);
 
