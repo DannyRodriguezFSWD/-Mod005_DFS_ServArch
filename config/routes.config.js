@@ -5,6 +5,8 @@ const posts = require('../controllers/posts.controller')
 const users = require('../controllers/user.controller')
 const secure = require('../middleware/secure.middleware')
 
+router.get('/')
+
 router.get('/employees', employees.list)
 router.get('/employees/oldest', employees.oldest)
 router.get('/employees/:name', employees.name)
